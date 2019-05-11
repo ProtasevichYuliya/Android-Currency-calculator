@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/custombackground"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Текущий курс EUR к RUB"
+        android:textSize="26sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:textSize="50sp"
+        android:id="@+id/textViewNumber"
+        android:text=""
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="16dp"/>
+
+    <EditText android:id="@+id/enterNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingLeft="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Введите сумму для перевода" />
+
+    <Button
+        android:id="@+id/buttonLeft"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+
+        android:background="@drawable/custombackground"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="EUR->RUB"
+        app:layout_constraintLeft_toLeftOf="@+id/enterNumber"
+        app:layout_constraintTop_toBottomOf="@+id/enterNumber"
+
+        android:onClick="convertEURtoRUB"/>
+
+    <Button
+        android:id="@+id/buttonRight"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+
+        android:background="@drawable/custombackground"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="RUB->EUR"
+        app:layout_constraintRight_toRightOf="@+id/enterNumber"
+        app:layout_constraintTop_toBottomOf="@+id/enterNumber"
+
+        android:onClick="convertRUBtoEUR"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLeft"
+        android:textSize="30sp"
+        android:id="@+id/textViewResult"
+        android:text="Результат:"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="40dp"
+        android:text=""
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewResult"
+        app:layout_constraintLeft_toRightOf="@+id/textViewResult" />
+
+</android.support.constraint.ConstraintLayout>
